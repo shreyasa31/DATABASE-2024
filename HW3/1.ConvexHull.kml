@@ -1,0 +1,139 @@
+<kml xmlns="http://earth.google.com/kml/2.0">
+<script>window._wordtune_extension_installed = true;</script>
+<Document>
+<Style id="z1">
+<IconStyle>
+<Icon>
+<href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Style id="convexHullStyle">
+    <LineStyle>
+        <color>ff0000ff</color> <!-- This sets the line color to red. -->
+        <width>3</width> <!-- This sets the line width. -->
+    </LineStyle>
+    <PolyStyle>
+        <color>ff00ff00</color> <!-- This sets the fill color to an opaque green. -->
+    </PolyStyle>
+</Style>
+
+
+<Folder>
+<name>Libraries</name>
+<Placemark>
+<name>Leavy</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2834358,34.0213809</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Doheny</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2843366,34.0203954</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>ScienceEng</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2888894,34.0198992</coordinates>
+</Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Departments</name>
+<Placemark>
+<name>Viterbi</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2875113,34.0206074</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Marshall</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2856719,34.0186260</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Dentistry</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2873030,34.0242580</coordinates>
+</Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Cafes</name>
+<Placemark>
+<name>Cava</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2845707,34.0251192</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Galen Dining</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2872337,34.0228039</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Dulce</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2851314,34.0252201</coordinates>
+</Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Fountains</name>
+<Placemark>
+<name>Tommy Fountain</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2852153,34.0205785</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Generations</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2833323,34.0222885</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>CS Fountain</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2891122,34.0205550</coordinates>
+</Point>
+</Placemark>
+</Folder>
+<Placemark>
+<name>Home</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2879942,34.0321413</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+    <name>Convex Hull</name>
+    <styleUrl>#convexHullStyle</styleUrl>
+    <Polygon>
+        <outerBoundaryIs>
+            <LinearRing>
+                <coordinates>
+                 -118.2856719,34.018626 -118.2888894,34.0198992 -118.2891122,34.020555 -118.2879942,34.0321413 -118.2845707,34.0251192 -118.2833323,34.0222885 -118.2834358,34.0213809 -118.2856719,34.018626
+                </coordinates>
+            </LinearRing>
+        </outerBoundaryIs>
+    </Polygon>
+</Placemark>
+</Document>
+</kml>

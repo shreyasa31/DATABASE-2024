@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>OL</title>
+<script src="https://openlayers.org/api/OpenLayers.js">
+</script>
+<style>
+#map {
+    width:400px;
+    height:400px;
+}
+</style>
+</head>
+
+<body>
+<div id="map"></div>
+
+
+<script>
+// your JS code 
+//console.log("Hola, all!");
+//alert("Hello JS World!");
+
+// my data is a label/ID for what we store, which is the object stored in variable d, 
+// whose value is {"k1":[{"a":5, "b":-6}]}, which consists of a key called k1 
+// with an array as its value: [{"a":5, "b":-6}]
+
+
+// here's how to plot points on a map, using OpenLayers:
+// [this is code I mildly modified, from an existing source]
+function initMap() {
+        map = new OpenLayers.Map('map');
+        basemap = new OpenLayers.Layer.OSM("Simple OSM Map");
+        map.addLayer(basemap);
+        markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+}// initMap()
+
+function addMarker(latitude, longitude) {
+        var lonLat = new OpenLayers.LonLat(longitude, latitude)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+        );
+        var point = new OpenLayers.Marker(lonLat);
+        markers.addMarker(point);
+        map.setCenter(lonLat,18); // second arg is zoom level
+        //console.log(latitude + ", " + longitude);
+}// addMarker()
+
+
+// load and setup map layers
+var points = {
+  "coordinates": [{
+      "latitude": 34.0213809,
+      "longitude": -118.2834358
+    },
+    {
+      "latitude": 34.0203954,
+      "longitude": -118.2843366
+    },
+    {
+      "latitude": 34.0198992,
+      "longitude": -118.2888894
+    },
+    {
+      "latitude": 34.0206074,
+      "longitude":-118.2875113
+    },
+    {
+      "latitude":34.0186260 ,
+      "longitude":-118.2856719
+    },
+    {
+      "latitude":34.0242580 ,
+      "longitude": -118.2873030
+    },
+    {
+      "latitude": 34.0251192,
+      "longitude":-118.2845707
+    },
+    {
+      "latitude": 34.0228039,
+      "longitude": -118.2872337
+    },
+    {
+      "latitude":34.0252201,
+      "longitude": -118.2851314
+    },
+    {
+      "latitude":34.0205785 ,
+      "longitude": -118.2852153
+    },
+    {
+      "latitude": 34.0222885,
+      "longitude": -118.2833323
+    },
+    {
+      "latitude": 34.0205550,
+      "longitude": -118.2891122
+    },
+    {
+      "latitude":34.0321413,
+      "longitude":-118.2879942
+    }
+   
+  ]
+};
+
+localStorage.setItem("myData",JSON.stringify(points));
+// you'd need to modify the above, to store all your points
+
+
+//next [presumably after closing the browser, and reloading our html]
+// we can fetch the stored data, just by supplying its key:
+var dataStored = JSON.parse(localStorage.getItem("myData"));
+// verify that we fetched our data correctly
+console.log(dataStored); 
+initMap();
+// we can iterate through our array [of points], like so:
+var coordinates = dataStored.coordinates; 
+for(let coord of coordinates) {
+    addMarker(coord.latitude, coord.longitude);
+}
+
+
+</script>
+
+</body>
+
+</html>
+
+<!--
+https://www.google.com/maps/search/usc/@34.0205363,-118.2855507,36m/data=!3m1!1e3
+-->
