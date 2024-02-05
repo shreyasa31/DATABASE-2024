@@ -1,0 +1,2 @@
+# DATABASE-2024
+CSCI 585 Assignments
